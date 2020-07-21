@@ -1,0 +1,170 @@
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecognitions (20200721003108)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "recognitions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "content" text, "employee_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_4f69af4fa8"
+FOREIGN KEY ("employee_id")
+  REFERENCES "employees" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_recognitions_on_employee_id" ON "recognitions" ("employee_id")[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200721003108"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-21 00:43:14.648273"], ["updated_at", "2020-07-21 00:43:14.648273"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20200721004349)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "employees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200721004349"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (1.1ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Yasmine Jerde"], ["created_at", "2020-07-21 00:58:01.519600"], ["updated_at", "2020-07-21 00:58:01.519600"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Una Schaden"], ["created_at", "2020-07-21 00:58:01.526286"], ["updated_at", "2020-07-21 00:58:01.526286"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Filomena O'Kon"], ["created_at", "2020-07-21 00:58:01.530702"], ["updated_at", "2020-07-21 00:58:01.530702"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marshall Willms"], ["created_at", "2020-07-21 00:58:01.534592"], ["updated_at", "2020-07-21 00:58:01.534592"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Melani Hayes"], ["created_at", "2020-07-21 00:58:01.538928"], ["updated_at", "2020-07-21 00:58:01.538928"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Zachary Metz"], ["created_at", "2020-07-21 00:58:01.542784"], ["updated_at", "2020-07-21 00:58:01.542784"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Meghann Adams PhD"], ["created_at", "2020-07-21 00:58:01.546522"], ["updated_at", "2020-07-21 00:58:01.546522"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Hermine Bogisich"], ["created_at", "2020-07-21 00:58:01.551680"], ["updated_at", "2020-07-21 00:58:01.551680"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dylan Schinner"], ["created_at", "2020-07-21 00:58:01.556282"], ["updated_at", "2020-07-21 00:58:01.556282"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dr. Nikole Conroy"], ["created_at", "2020-07-21 00:58:01.560511"], ["updated_at", "2020-07-21 00:58:01.560511"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.7ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Vennie Ziemann"], ["content", "[\"Perspiciatis sunt qui.\", \"Quis alias corporis.\", \"Enim provident doloribus.\"]"], ["created_at", "2020-07-21 00:58:01.574526"], ["updated_at", "2020-07-21 00:58:01.574526"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.3ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Marvel Nicolas"], ["content", "[\"Omnis in repudiandae.\", \"Et eius ab.\", \"Eum at et.\"]"], ["created_at", "2020-07-21 00:58:01.579054"], ["updated_at", "2020-07-21 00:58:01.579054"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.6ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Mrs. Porter Lemke"], ["content", "[\"Blanditiis saepe quidem.\", \"Repellat qui ipsum.\", \"Tempora explicabo dolor.\"]"], ["created_at", "2020-07-21 00:58:01.583583"], ["updated_at", "2020-07-21 00:58:01.583583"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.3ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Rubie Hintz"], ["content", "[\"Et rerum blanditiis.\", \"Ut libero est.\", \"Qui error et.\"]"], ["created_at", "2020-07-21 00:58:01.588861"], ["updated_at", "2020-07-21 00:58:01.588861"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.3ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Eulah Turner"], ["content", "[\"Rerum id vel.\", \"Fugiat voluptatum omnis.\", \"Et dicta et.\"]"], ["created_at", "2020-07-21 00:58:01.592703"], ["updated_at", "2020-07-21 00:58:01.592703"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.5ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Samantha Heaney"], ["content", "[\"Vero eius dolorum.\", \"Sunt incidunt id.\", \"Ea id omnis.\"]"], ["created_at", "2020-07-21 00:58:01.596433"], ["updated_at", "2020-07-21 00:58:01.596433"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.4ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Kena Shields I"], ["content", "[\"Sit est ut.\", \"Magnam aspernatur temporibus.\", \"Ullam eum tempora.\"]"], ["created_at", "2020-07-21 00:58:01.615417"], ["updated_at", "2020-07-21 00:58:01.615417"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.3ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Charissa Gleichner"], ["content", "[\"Quam vel deleniti.\", \"Veniam ad suscipit.\", \"Corporis sunt voluptas.\"]"], ["created_at", "2020-07-21 00:58:01.619678"], ["updated_at", "2020-07-21 00:58:01.619678"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.3ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Mr. Hoyt O'Kon"], ["content", "[\"Alias beatae ipsam.\", \"Rerum nesciunt nemo.\", \"Ut deserunt est.\"]"], ["created_at", "2020-07-21 00:58:01.623628"], ["updated_at", "2020-07-21 00:58:01.623628"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRecognition Create (0.3ms)[0m  [1m[32mINSERT INTO "recognitions" ("sender", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["sender", "Issac Spinka"], ["content", "[\"Temporibus natus hic.\", \"Fugit ut tenetur.\", \"Quis sit eum.\"]"], ["created_at", "2020-07-21 00:58:01.627441"], ["updated_at", "2020-07-21 00:58:01.627441"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recognitions"[0m
+  [1m[36mRecognition Load (1.3ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees"[0m
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-07-20 21:10:37 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/mlisareyes/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/mlisareyes/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.2ms | Allocations: 480)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 2632)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-07-20 21:10:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/notes" for ::1 at 2020-07-20 21:10:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/notes"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/api/v1/recognitions" for ::1 at 2020-07-20 21:10:55 -0400
+Processing by Api::V1::RecognitionsController#index as HTML
+  [1m[36mRecognition Load (0.5ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions"[0m
+  ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 1.2ms | Allocations: 7177)
+
+
