@@ -1,16 +1,55 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
   <head>
     <title>Recognition</title>
     <link rel="stylesheet" href="styles.css"/>
   </head>
+
   <body>
-    <div class="main">
+    <div class="container">
+      <h1>Who Do You Want to Recognize?</h1>
       <div class="navigation">
+      </div>
+      <form id="new-recognition-form">
+        <input type="text" name="employee" placeholder="Search Employee">
+        <br><br>
+        <textarea name="name" rows="8" cols="60" placeholder="Type your recongition here"></textarea>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+      <div id="recongitions-container">
 
       </div>
-
     </div>
     <script src="/frontend/src/employee.js"></script>
     <script src="/frontend/src/recognition.js"></script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Recognition App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Recognize Someone</h1>
+      <form id ="new-recognition-form">
+        <div class="form-group">
+          <label for="employee">Employee</label>
+          <input type="text" id="Employee" placeholder="Search Employee">
+        </div>
+        <textarea name="name" rows="8" cols="60" placeholder="Type your recongition here"></textarea>
+        <div class="form-group">
+          <label for="sender">Sender</label>
+          <input type="text" id="Sender">
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+      <div class="comments-container">
+        
+      </div>
+    </div>
+
   </body>
 </html>
