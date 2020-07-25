@@ -1,11 +1,9 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//
-// })
-//
-// class Recognition {
-//   constructor(recognition) {
-//     this.content = content;
-//     this.
-//   }
-// }
-console.log('test recognition.js')
+class Recognition {
+  constructor(recognition) {
+    this.id = recognition.id;
+    this.sender = recognition.sender;
+    this.content = recognition.content;
+    this.employee_id = recognition.employee_id;
+  }
+}
+// console.log('test recognition.js')

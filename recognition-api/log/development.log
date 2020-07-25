@@ -705,3 +705,26 @@ Processing by Api::V1::RecognitionsController#index as HTML
 Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 1.0ms | Allocations: 7060)
 
 
+Started GET "/api/v1/recognitions" for ::1 at 2020-07-25 16:18:27 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::RecognitionsController#index as HTML
+  [1m[36mRecognition Load (0.5ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions"[0m
+  ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 8.6ms | ActiveRecord: 1.1ms | Allocations: 7622)
+
+
+Started GET "/api/v1/recognitions" for ::1 at 2020-07-25 16:18:31 -0400
+Processing by Api::V1::RecognitionsController#index as HTML
+  [1m[36mRecognition Load (0.2ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions"[0m
+  ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 2286)
+
+
+Started GET "/api/v1/recognitions" for ::1 at 2020-07-25 16:18:35 -0400
+Processing by Api::V1::RecognitionsController#index as */*
+  [1m[36mRecognition Load (0.1ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions"[0m
+  ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 2289)
+
+
