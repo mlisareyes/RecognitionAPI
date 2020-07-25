@@ -8,11 +8,19 @@ class Recognitions {
   getAllRecognitions() {
     this.adapter.getRecognitions()
     .then(recognitions => {
-      console.log('notes')
+      recognitions.forEach(recognition => this.recognitions.push(new Recognition(recognition)))
     })
+    .then(() => {
+      this.render()
+    })
+  }
+
+  render() {
+    const recognitionsContainer = document.getElementById('recognitions-container')
+    recognitionsContainer.innerHTML = this.recognitions.map(note => note.renderLi()).join('')
   }
 }
 
 
 
-// console.log('test recognitions.js')
+console.log('test recognitions.js')
