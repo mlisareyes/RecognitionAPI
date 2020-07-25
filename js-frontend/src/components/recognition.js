@@ -7,7 +7,7 @@ class Recognition {
   }
 
   renderLi() {
-    return `<li data-id=${this.id}> To: ${this.employeeId(name)} ${this.content} written by: ${this.sender}</li>`
+    return `<li data-id=${this.id}> To: ${this.employeeId.name} ${this.content} written by: ${this.sender}</li>`
   }
 }
 // console.log('test recognition.js')
