@@ -14,6 +14,7 @@ end
 10.times do
   Recognition.create({
     sender: Faker::Name.name,
-    content: Faker::Lorem.sentences(number: 3)
+    content: Faker::Lorem.sentences(number: 3),
+    employee_id: Faker::Number.between(from: 1, to: 10)
     })
 end
