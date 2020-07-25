@@ -15,7 +15,7 @@ class Api::V1::EmployeesController < ApplicationController
   def create
     @employee = Employee.create(employee_params)
 
-    render jason: @employee, status: 200
+    render json: @employee, status: 200
   end
 
   private

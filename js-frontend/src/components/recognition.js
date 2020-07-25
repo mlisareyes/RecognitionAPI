@@ -8,3 +8,4 @@
 //     this.
 //   }
 // }
+console.log('test recognition.js')

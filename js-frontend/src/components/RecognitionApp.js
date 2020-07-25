@@ -4,3 +4,4 @@ class RecognitionApp {
     this.adapter = new RecognitionsAdapter
   }
 }
+console.log('test RecognitionApp.js')
