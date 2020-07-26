@@ -5,24 +5,29 @@
     <title>Recognition App</title>
   </head>
   <body>
+    <!-- <button id=count>see employees recognitions counter</button> -->
     <div class="container">
       <h1>Recognize Someone</h1>
       <div id="new-recognition-container">
         <form id="new-recognition-form">
-          <input type="text" id="Employee" placeholder="Search Employee">
+          <select id="employee-select">
+            <option selected="selected">Choose an Employee</option>
+          </select>
+          <!-- <input type="text" id="employee" placeholder="Search Employee"> -->
           <br><br>
-          <textarea name="name" rows="8" cols="60" placeholder="Give a reason for this recognition"></textarea>
+          <textarea name="content" id="content" rows="8" cols="60" placeholder="Give a reason for this recognition"></textarea>
           <br><br>
-          <input type="text" id="Sender" placeholder="Type your name here">
+          <input type="text" id="sender" placeholder="Type your name here">
           <br><br>
+          <input type="hidden" id="employee-id" value="">
           <input type="submit" value="Submit">
         </form>
       </div>
       <div id="recognitions-content">
         <ul id="recognitions-container">
-          
+
         </ul>
-        <div id="recognition-show"
+        <div id="employees-container"
 
       </div>
 

@@ -1,4 +1,4 @@
 class EmployeeSerializer < ActiveModel::Serializer
-  attributes :name
+  attributes :id, :name 
   has_many :recognitions
 end
