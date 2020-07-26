@@ -9,10 +9,12 @@ class Api::V1::RecognitionsController < ApplicationController
     @recognition = Recognition.find(params[:id])
 
     render json: @recognition, status: 200
+    # render json: @recognition.to_json(only: [:id, :sender, :content, :employee_id],
+    #                           include: [employee: { only: [:name]}])
   end
 
   def create
-    @recognition = Recognition.create(note_params)
+    @recognition = Recognition.create(recognition_params)
 
     render json: @recognition, status: 200
   end
@@ -31,7 +33,8 @@ class Api::V1::RecognitionsController < ApplicationController
   end
 
   private
+
   def recognition_params
-    params.require(:recognition).permit(:content, :employee_id)
+    params.require(:recognition).permit(:id, :sender, :content, :employee_id)
   end
 end

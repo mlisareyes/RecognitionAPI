@@ -1,4 +1,4 @@
 class RecognitionSerializer < ActiveModel::Serializer
-  attributes :id, :sender, :content, :employee_id
+  attributes :id, :sender, :content
   belongs_to :employee
 end
