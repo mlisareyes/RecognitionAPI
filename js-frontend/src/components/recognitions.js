@@ -1,8 +1,8 @@
 class Recognitions {
   constructor() {
     this.recognitions = []
-    this.adapter = new RecognitionsAdapter()
     this.employees = []
+    this.adapter = new RecognitionsAdapter()
     this.initBindingsAndEventListeners()
     this.getAllRecognitions()
     this.getAllEmployees()
@@ -13,16 +13,6 @@ class Recognitions {
     this.employeesSelect = document.getElementById('employee-select')
     this.recognitionForm = document.getElementById('new-recognition-form')
     this.recognitionForm.addEventListener('submit', this.createRecognition.bind(this))
-    // this.button = document.getElementById('count')
-    // this.button.addEventListener('onclick', this.renderEmployeeCount())
-    // this.employeesContainer = document.getElementById('employees-container')
-    // this.employeesSearch = document.getElementById('employee')
-    // this.employeesSearch.addEventListener('keyup', this.searchEmployee.bind(this))
-  }
-
-  createRecognition(event) {
-    event.preventDefault()
-    console.log('submitted')
   }
 
   getAllRecognitions() {
@@ -44,6 +34,58 @@ class Recognitions {
       this.employeesSelect.innerHTML = this.employeesSelect.innerHTML + this.employees.map(employee => employee.renderEmp()).join('')
     })
   }
+
+  createRecognition(event){
+    event.preventDefault()
+    // console.log(`${event.target[0].value}`)
+    // console.log(`${event.target[1].value}`)
+    // console.log(`${event.target[2].value}`)
+
+    const data = {
+      employee_id: event.target[0].value,
+      content: event.target[1].value,
+      sender: event.target[2].value
+    }
+    // let sender = document.getElementById('sender').value;
+    // let content = document.getElementById('content').value;
+    // let employee_id = document.getElementById('employee-id').value;
+
+    this.adapter.createRecognition(data).then(recognition => {
+      this.recognitions.push(new Recognition(recognition))
+      // this.employee_id = ''
+      // this.content.value = ''
+      // this.sender.value = ''
+      event.target[0].value = ''
+      event.target[1].value = ''
+      event.target[2].value = ''
+      this.render()
+    })
+  }
+
+
+    // }
+    // console.log(`${document.getElementById('employee-select').options[document.getElementById('employee-select').selectedIndex].innerHTML}`)
+    // console.log(`${this.employees.find(employee => employee.id == event.target[0].value)}`)
+    // console.log(`${employeesSelect.options[employeesSelect.selectedIndex].innerHTML}`)
+    //   const value = {
+    //   employee_id: event.target[0].value,
+    //   content: event.target[1].value,
+    //   sender: event.target[2].value,
+    //   //employeeName: document.getElementById('employee-select').options[document.getElementById('employee-select').selectedIndex].innerHTML
+    //   // employee: document.getElementById('employee-select').options[document.getElementById('employee-select').selectedIndex].innerHTML
+    //   // employee: this.employees.find(employee => employee.id == event.target[0].value)
+    // }
+    //
+    // this.adapter.createRecognition(value)
+    // .then(recognition => {
+    //   // let newRecognition = new Recognition(value)
+    //   this.recognitions.push(new Recognition(recognition))
+    //   event.target[0].value = ""
+    //   event.target[1].value = ""
+    //   event.target[2].value = ""
+    //   this.render()
+    // })
+  // }
 
   render() {
     this.recognitionsContainer.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).join('')

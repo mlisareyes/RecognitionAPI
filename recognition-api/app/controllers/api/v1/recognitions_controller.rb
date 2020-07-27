@@ -35,6 +35,6 @@ class Api::V1::RecognitionsController < ApplicationController
   private
 
   def recognition_params
-    params.require(:recognition).permit(:id, :sender, :content, :employee_id)
+    params.require(:recognition).permit(:employee_id, :sender, :content)
   end
 end

@@ -2,7 +2,7 @@ class Employee {
   constructor(employee) {
     this.id = employee.id;
     this.name = employee.name;
-    this.recogntions = employee.recognitions;
+    // this.recogntions = employee.recognitions;
   }
 
   renderEmp() {

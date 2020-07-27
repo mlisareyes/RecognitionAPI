@@ -1,10 +1,12 @@
 class Recognition {
   constructor(recognition) {
     this.id = recognition.id;
-    this.sender = recognition.sender;
-    this.content = recognition.content;
     this.employeeId = recognition.employee_id;
+    this.content = recognition.content;
+    this.sender = recognition.sender;
     this.employeeName = recognition.employee.name;
+    // this.employee = this.Recognitions.employees.find(employee => employee.id==recognition.employee_id)
+    // this.employee = new Employee();
   }
 
   renderLi() {
@@ -12,3 +14,4 @@ class Recognition {
   }
 }
 // console.log('test recognition.js')
+// To: ${this.employeeName}
