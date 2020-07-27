@@ -13,18 +13,6 @@ class RecognitionsAdapter {
     .then(response => response.json())
   }
 
-  // createRecognition(value) {
-  //   const recognition = {
-  //     body: value,
-  //   }
-  //   return fetch('http://localhost:3000/api/v1/recognitions', {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ recognition }),
-  //   }).then(response => response.json())
-  // }
   createRecognition(data) {
     const recognition = {
       employee_id: data.employee_id,
@@ -44,20 +32,6 @@ class RecognitionsAdapter {
         }
       }),
     }).then(response => response.json())
-
-    // return fetch(this.baseUrl, {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     recognition: {
-    //       sender: event.target[1].value,
-    //       content: event.target[2].value,
-    //       employee_id: event.target[3].value
-    //     }
-    //   }).then(response => response.json())
-    // })
   }
 }
 

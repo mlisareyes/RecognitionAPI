@@ -46,46 +46,14 @@ class Recognitions {
       content: event.target[1].value,
       sender: event.target[2].value
     }
-    // let sender = document.getElementById('sender').value;
-    // let content = document.getElementById('content').value;
-    // let employee_id = document.getElementById('employee-id').value;
-
     this.adapter.createRecognition(data).then(recognition => {
       this.recognitions.push(new Recognition(recognition))
-      // this.employee_id = ''
-      // this.content.value = ''
-      // this.sender.value = ''
       event.target[0].value = ''
       event.target[1].value = ''
       event.target[2].value = ''
       this.render()
     })
   }
-
-
-    // }
-    // console.log(`${document.getElementById('employee-select').options[document.getElementById('employee-select').selectedIndex].innerHTML}`)
-    // console.log(`${this.employees.find(employee => employee.id == event.target[0].value)}`)
-    // console.log(`${employeesSelect.options[employeesSelect.selectedIndex].innerHTML}`)
-    //   const value = {
-    //   employee_id: event.target[0].value,
-    //   content: event.target[1].value,
-    //   sender: event.target[2].value,
-    //   //employeeName: document.getElementById('employee-select').options[document.getElementById('employee-select').selectedIndex].innerHTML
-    //   // employee: document.getElementById('employee-select').options[document.getElementById('employee-select').selectedIndex].innerHTML
-    //   // employee: this.employees.find(employee => employee.id == event.target[0].value)
-    // }
-    //
-    // this.adapter.createRecognition(value)
-    // .then(recognition => {
-    //   // let newRecognition = new Recognition(value)
-    //   this.recognitions.push(new Recognition(recognition))
-    //   event.target[0].value = ""
-    //   event.target[1].value = ""
-    //   event.target[2].value = ""
-    //   this.render()
-    // })
-  // }
 
   render() {
     this.recognitionsContainer.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).join('')

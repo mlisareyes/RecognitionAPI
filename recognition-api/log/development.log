@@ -20292,3 +20292,65 @@ Processing by Api::V1::RecognitionsController#create as */*
 Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.4ms | Allocations: 3910)
 
 
+Started GET "/api/v1/recognitions" for 127.0.0.1 at 2020-07-27 00:50:51 -0400
+Started GET "/api/v1/employees" for 127.0.0.1 at 2020-07-27 00:50:51 -0400
+Processing by Api::V1::RecognitionsController#index as */*
+Processing by Api::V1::EmployeesController#index as */*
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mRecognition Load (0.2ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions"[0m
+  ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+  ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mRecognition Load (0.3ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 1]]
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRecognition Load (0.1ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 2]]
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRecognition Load (0.1ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 3]]
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mRecognition Load (0.1ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecognition Load (0.1ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecognition Load (0.2ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecognition Load (0.2ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mRecognition Load (0.1ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRecognition Load (0.2ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 9]]
+[active_model_serializers]   [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mRecognition Load (0.2ms)[0m  [1m[34mSELECT "recognitions".* FROM "recognitions" WHERE "recognitions"."employee_id" = ?[0m  [["employee_id", 10]]
+[active_model_serializers]   [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/employees_controller.rb:6:in `index'
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (56.57ms)
+[active_model_serializers]   [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 2.1ms | Allocations: 31319)
+
+
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCACHE Employee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/recognitions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (76.36ms)
+Completed 200 OK in 85ms (Views: 83.0ms | ActiveRecord: 2.0ms | Allocations: 37804)
+
+
