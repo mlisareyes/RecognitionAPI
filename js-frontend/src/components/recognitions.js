@@ -54,7 +54,7 @@ class Recognitions {
   }
 
   render() {
-    this.recognitionsContent.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).join('')
+    this.recognitionsContent.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).reverse().join('')
   }
 
   revealForm() {
