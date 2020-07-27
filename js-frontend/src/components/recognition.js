@@ -5,13 +5,15 @@ class Recognition {
     this.content = recognition.content;
     this.sender = recognition.sender;
     this.employeeName = recognition.employee.name;
-    // this.employee = this.Recognitions.employees.find(employee => employee.id==recognition.employee_id)
-    // this.employee = new Employee();
   }
 
   renderLi() {
-    return `<li data-id=${this.id}> To: ${this.employeeName} ${this.content} written by: ${this.sender}</li>`
-  }
+    return `<div class="card" data-id=${this.id}>
+              <h3>${this.employeeName}</h3>
+              <p>${this.content}</p>
+              <b>written by: ${this.sender}</b>
+            </div>`
+          }
+  //   // return `<li data-id=${this.id}> To: ${this.employeeName} ${this.content} written by: ${this.sender}</li>`
+  // }
 }
-// console.log('test recognition.js')
-// To: ${this.employeeName}

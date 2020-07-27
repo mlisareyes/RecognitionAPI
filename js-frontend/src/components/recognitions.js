@@ -9,10 +9,12 @@ class Recognitions {
   }
 
   initBindingsAndEventListeners() {
-    this.recognitionsContainer = document.getElementById('recognitions-container')
+    this.recognitionsContent = document.getElementById('recognitions-content')
     this.employeesSelect = document.getElementById('employee-select')
     this.recognitionForm = document.getElementById('new-recognition-form')
     this.recognitionForm.addEventListener('submit', this.createRecognition.bind(this))
+    this.button = document.getElementById('button')
+    this.button.addEventListener('click', this.revealForm.bind(this))
   }
 
   getAllRecognitions() {
@@ -37,10 +39,6 @@ class Recognitions {
 
   createRecognition(event){
     event.preventDefault()
-    // console.log(`${event.target[0].value}`)
-    // console.log(`${event.target[1].value}`)
-    // console.log(`${event.target[2].value}`)
-
     const data = {
       employee_id: event.target[0].value,
       content: event.target[1].value,
@@ -56,41 +54,11 @@ class Recognitions {
   }
 
   render() {
-    this.recognitionsContainer.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).join('')
+    this.recognitionsContent.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).join('')
+  }
+
+  revealForm() {
+    document.getElementById('new-recognition-form').style.visibility = "visible"
+    this.button.style.visibility = "hidden"
   }
 }
-
-console.log('test recognitions.js')
-
-// createRecognition(event) {
-  //   event.preventDefault()
-  //   console.log(`${event.target[3].value}`)
-  //
-  //   // this.adapter.createRecognition(recognition)
-  //   //   .then(recognition => {
-    //   //     let newRecognition = new Recognition(recognition)
-    //   //     this.recognitions.push(newRecognition)
-    //   //   })
-    // }
-
-// renderEmployeeCount() {
-  //   // console.log(`${employees[2].recogntions}`)
-  //   this.adapter.getEmployees()
-  //   // .then(employees => {
-    //   //   employees.forEach(employee => this.employees.push(new Employee(employee)))
-    //   // })
-    //   .then(() => {
-      //     this.employeesContainer.innerHTML = this.employees.map(employee => employee.renderEmpLi()).join('')
-      //   })
-      // }
-
-      // searchEmployee(event) {
-        //   const searchString = event.target.value.toLowerCase();
-        //   const filteredEmployees = this.employees.filter((employee) => {
-          //     return (
-            //       employee.name.toLowerCase().includes(searchString)
-            //     )
-            //   })
-            //   console.log(`${filteredEmployees[0].name}`)
-            // }
-            //
