@@ -15,16 +15,5 @@ class Recognition {
               <b>written by: ${this.sender}</b><br>
               <small>created at: ${this.createdAt}</small>
             </div>`
-
-            // let empId = document.getElementbyTagName('h3')
-            // empId.addEventListener("click", this.renderEmpRecogs.bind(this))
           }
-  //   // return `<li data-id=${this.id}> To: ${this.employeeName} ${this.content} written by: ${this.sender}</li>`
-  // }
-  // myFunction() {
-  //   console.log(`hello`)
-  // }
 }
-// <button id="button-id" type="button" data-id=${this.employeeId}>click to see more recognitions for this employee<button>
-
-// parseInt(document.getElementsByTagName('h3')[1].dataset.id)
