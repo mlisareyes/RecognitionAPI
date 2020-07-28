@@ -34,7 +34,3 @@ class RecognitionsAdapter {
     }).then(response => response.json())
   }
 }
-
-// console.log('test RecognitionsAdapter')
-// this talks to the backend API
-// also similar to `FetchRequests.js`

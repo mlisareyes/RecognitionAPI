@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-10.times do
+15.times do
   Employee.create({
     name: Faker::Name.name
     })
@@ -14,7 +14,7 @@ end
 10.times do
   Recognition.create({
     sender: Faker::Name.name,
-    content: Faker::Lorem.sentences(number: 3),
+    content: Faker::Lorem.paragraph,
     employee_id: Faker::Number.between(from: 1, to: 10)
     })
 end

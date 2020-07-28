@@ -15,6 +15,8 @@ class Recognitions {
     this.recognitionForm.addEventListener('submit', this.createRecognition.bind(this))
     this.button = document.getElementById('button')
     this.button.addEventListener('click', this.revealForm.bind(this))
+    this.employeeContainer = document.getElementById('employee-container')
+    this.employeeTitle = document.querySelector('.employee-title')
   }
 
   getAllRecognitions() {
@@ -24,6 +26,9 @@ class Recognitions {
     })
     .then(() => {
       this.render()
+    })
+    .then(() => {
+      this.initBindingsAndEventListenersTwo()
     })
   }
 
@@ -57,8 +62,29 @@ class Recognitions {
     this.recognitionsContent.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).reverse().join('')
   }
 
+
+  initBindingsAndEventListenersTwo() {
+    document.querySelectorAll('h3').forEach(element => element.addEventListener('click', this.renderEmpRecogs.bind(this)))
+  }
+
   revealForm() {
-    document.getElementById('new-recognition-form').style.visibility = "visible"
-    this.button.style.visibility = "hidden"
+    this.recognitionForm.style.display = "block"
+    this.button.style.display = "none"
+  }
+
+  renderEmpRecogs(event) {
+    let emp = this.employees.find(employee => employee.id == event.target.dataset.id)
+    let filteredRecognitions = this.recognitions.filter(recognition => recognition.employeeId == emp.id)
+    this.employeeContainer.innerHTML = ''
+    filteredRecognitions.forEach(rec => this.renderEmployeeRecognitions(rec))
+  }
+
+  renderEmployeeRecognitions(rec) {
+    this.employeeTitle.innerHTML = `<h3>${rec.employeeName}'s Recognitions:</h3>`
+    this.employeeContainer.innerHTML = this.employeeContainer.innerHTML +
+              `<div class="employee-card" data-id="${rec.id}">
+              <p>${rec.content}</p>
+              <b>written by: ${rec.sender}</b>
+              </div>`
   }
 }

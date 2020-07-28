@@ -45,7 +45,8 @@ div#recognitions-content {
 }
 
 #new-recognition-form {
-  visibility: hidden;
+  /* visibility: hidden; */
+  display: none;
 }
 
 #button {
