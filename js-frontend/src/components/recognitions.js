@@ -55,6 +55,7 @@ class Recognitions {
       event.target[1].value = ''
       event.target[2].value = ''
       this.render()
+      this.initBindingsAndEventListenersTwo()
     })
   }
 
@@ -62,14 +63,13 @@ class Recognitions {
     this.recognitionsContent.innerHTML = this.recognitions.map(recognition => recognition.renderLi()).reverse().join('')
   }
 
-
-  initBindingsAndEventListenersTwo() {
-    document.querySelectorAll('h3').forEach(element => element.addEventListener('click', this.renderEmpRecogs.bind(this)))
-  }
-
   revealForm() {
     this.recognitionForm.style.display = "block"
     this.button.style.display = "none"
+  }
+
+  initBindingsAndEventListenersTwo() {
+    document.querySelectorAll('h3').forEach(element => element.addEventListener('click', this.renderEmpRecogs.bind(this)))
   }
 
   renderEmpRecogs(event) {
