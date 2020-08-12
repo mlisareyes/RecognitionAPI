@@ -70,6 +70,7 @@ class Recognitions {
 
   initBindingsAndEventListenersTwo() {
     document.querySelectorAll('h3').forEach(element => element.addEventListener('click', this.renderEmpRecogs.bind(this)))
+    document.getElementsByName('delete-button').forEach(button => button.addEventListener('click', this.deleteRecognition.bind(this)))
   }
 
   renderEmpRecogs(event) {
@@ -86,5 +87,13 @@ class Recognitions {
               <p>${rec.content}</p>
               <b>written by: ${rec.sender}</b>
               </div>`
+  }
+
+  deleteRecognition(event) {
+    this.adapter.removeRecognition(event.target.dataset.id)
+    .then(data => {
+      let foundRecognition = document.querySelector(`div.card[data-id="${event.target.dataset.id}"]`)
+      foundRecognition.remove()
+    })
   }
 }

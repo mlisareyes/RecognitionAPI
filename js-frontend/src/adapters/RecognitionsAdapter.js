@@ -27,4 +27,14 @@ class RecognitionsAdapter {
       body: JSON.stringify({ recognition }),
     }).then(response => response.json())
   }
+
+  removeRecognition(recognition) {
+    return fetch(`${this.baseUrl}/${recognition}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      }
+    })
+    .then(response => response.json())
+  }
 }

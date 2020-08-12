@@ -13,7 +13,8 @@ class Recognition {
               <h3 data-id="${this.employeeId}">${this.employeeName}</h3>
               <p>${this.content}</p>
               <b>written by: ${this.sender}</b><br>
-              <small>created at: ${this.createdAt}</small>
+              <small>created at: ${this.createdAt}</small><br><br>
+              <button name="delete-button" data-id=${this.id}>Delete</button>
             </div>`
           }
 }
