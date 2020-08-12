@@ -24,13 +24,7 @@ class RecognitionsAdapter {
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({
-        recognition: {
-          employee_id: recognition.employee_id,
-          content: recognition.content,
-          sender: recognition.sender
-        }
-      }),
+      body: JSON.stringify({ recognition }),
     }).then(response => response.json())
   }
 }
